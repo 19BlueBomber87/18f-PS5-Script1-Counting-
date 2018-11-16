@@ -1,0 +1,36 @@
+Function Count-Numbers ()
+{
+    Param
+        (
+        [Parameter(Mandatory=$true,Position=0)]
+        [int]$StartCount,
+        [Parameter(Mandatory=$true,Position=1)]
+        [int]$endcount
+        )   
+   for ($startcount -eq 0;$StartCount -le $EndCount;$StartCount++)
+   {
+    Write-Host "`t`t $StartCount is being counted" -BackgroundColor Red
+    start-sleep 1
+    }
+ }
+ cls
+<#################################################################>
+Function Count-NumbersInfinity ()
+{
+    Param
+        (
+        [Parameter(Mandatory=$true,Position=0)]
+        [int64]$StartCount,
+        [Parameter(Mandatory=$true,Position=1)]
+        [int64]$endcount
+        )   
+   for ($startcount -eq 0;$StartCount -le $EndCount;$StartCount++)
+   {
+    Write-Host "`t`t #$StartCount" -BackgroundColor Yellow -ForeGroundColor Black
+    start-sleep 0
+    }
+ }
+ cls
+Count-Numbers -StartCount 7 -endcount 17
+Count-NumbersInfinity -StartCount 7 -endcount 777777777777
+#Notes ctrl-c to stop counting forever <3
